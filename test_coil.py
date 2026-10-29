@@ -46,7 +46,7 @@ if __name__ == "__main__":
     env = gym.make(scenario_name + "Scenario-v0", goal=goal_id)
 
     coil = CoIL(obs_sizes[scenario_name], 2)
-    ckpt_path = "./policies/" + scenario_name + "_" + args.goal.lower() + "_CoIL"
+    ckpt_path = "./policies/" + scenario_name + "_all_CoIL"
     coil.load_state_dict(torch.load(ckpt_path))
 
     episode_number = 10 if args.visualize else 100
